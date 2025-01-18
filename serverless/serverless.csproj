@@ -4,7 +4,10 @@
     <AzureFunctionsVersion>v4</AzureFunctionsVersion>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="4.5.0" />
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.19.1" />
+    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="4.2.0" />
+    <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.Storage" Version="5.2.1" />
+    <PackageReference Include="System.Memory.Data" Version="6.0.0" />
   </ItemGroup>
   <ItemGroup>
     <None Update="host.json">
@@ -14,5 +17,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <CopyToPublishDirectory>Never</CopyToPublishDirectory>
     </None>
+    <None Remove="emulated-data\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="emulated-data\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="emulated-data\**" />
   </ItemGroup>
 </Project>
